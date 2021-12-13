@@ -1,0 +1,132 @@
+{
+	"version": "0.0.1",
+	"name": "nextjs-starter",
+	"private": true,
+	"author": {
+		"email": "hello@spon.io",
+		"name": "Dave Stockley",
+		"url": "https://spon.io"
+	},
+	"repository": {
+		"type": "git",
+		"url": "ssh://git@github.com:magicspon/nextjs-starter.git"
+	},
+	"license": "MIT",
+	"scripts": {
+		"dev": "yarn generate; next dev",
+		"build": "yarn generate; next build",
+		"start": "next start",
+		"lint": "eslint src",
+		"lint-css": "stylelint ./**/*.css --quiet --fix",
+		"prettier": "prettier --ignore-path .gitignore \"**/*.+(js|ts|tsx)\"",
+		"format": "prettier --write \"src/**/*.{ts,tsx,json,js,jsx}\"",
+		"check-format": "yarn prettier -- --list-different",
+		"generate": "graphql-codegen --require dotenv/config --config codegen.json dotenv_config_path=.env.local",
+		"new:component": "hygen component with-prompt",
+		"new:page": "hygen page with-prompt",
+		"new:context": "hygen context with-prompt",
+		"new:hook": "hygen hook with-prompt"
+	},
+	"dependencies": {
+		"@heroicons/react": "^1.0.4",
+		"@tailwindcss/typography": "^0.5.0",
+		"@types/nprogress": "^0.2.0",
+		"@types/react-modal": "^3.13.1",
+		"@types/tailwindcss": "^2.2.4",
+		"clsx": "^1.1.1",
+		"cross-env": "7.0.3",
+		"graphql": "^16.1.0",
+		"graphql-request": "^3.7.0",
+		"next": "12.0.7",
+		"nprogress": "^0.2.0",
+		"react": "17.0.2",
+		"react-cookie-consent": "^7.0.1",
+		"react-dom": "17.0.2",
+		"react-modal": "^3.14.4",
+		"swr": "^1.1.1",
+		"usehooks-ts": "^2.1.1",
+		"zustand": "^3.6.7"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.16.0",
+		"@babel/preset-env": "^7.16.4",
+		"@babel/preset-typescript": "^7.15.0",
+		"@graphql-codegen/cli": "^2.3.0",
+		"@graphql-codegen/typescript": "^2.4.1",
+		"@graphql-codegen/typescript-graphql-request": "^4.3.2",
+		"@graphql-codegen/typescript-operations": "^2.2.1",
+		"@next/eslint-plugin-next": "^12.0.7",
+		"@types/body-scroll-lock": "^3.1.0",
+		"@types/graphql": "^14.5.0",
+		"@types/node": "^16.11.12",
+		"@types/react": "^17.0.37",
+		"@types/react-dom": "17.0.11",
+		"@types/three": "^0.135.0",
+		"@typescript-eslint/eslint-plugin": "^5.7.0",
+		"@typescript-eslint/parser": "^5.7.0",
+		"autoprefixer": "^10.3.7",
+		"babel-plugin-glsl": "^1.0.0",
+		"eslint": "^8.4.1",
+		"eslint-config-airbnb-typescript": "^16.1.0",
+		"eslint-config-next": "^12.0.7",
+		"eslint-config-prettier": "^8.3.0",
+		"eslint-import-resolver-lerna": "^2.0.0",
+		"eslint-import-resolver-typescript": "^2.5.0",
+		"eslint-plugin-compat": "^4.0.0",
+		"eslint-plugin-cypress": "^2.12.1",
+		"eslint-plugin-import": "^2.25.3",
+		"eslint-plugin-jest": "^25.3.0",
+		"eslint-plugin-jsx-a11y": "^6.5.1",
+		"eslint-plugin-react": "^7.27.1",
+		"eslint-plugin-react-hooks": "^4.3.0",
+		"glslify": "^7.1.1",
+		"glslify-loader": "^2.0.0",
+		"graphql-tag": "^2.12.6",
+		"husky": "^7.0.2",
+		"postcss": "^8.4.5",
+		"postcss-loader": "^6.2.1",
+		"postcss-preset-env": "^7.0.1",
+		"prettier": "^2.5.1",
+		"raw-loader": "^4.0.2",
+		"sharp": "^0.29.3",
+		"stylelint": "^14.1.0",
+		"stylelint-config-prettier": "^9.0.3",
+		"stylelint-config-standard": "^24.0.0",
+		"svg-jest": "^1.0.1",
+		"tailwindcss": "^3.0.2",
+		"ts-jest": "^27.1.1",
+		"ts-node": "10.4.0",
+		"tsconfig-paths": "3.12.0",
+		"typescript": "4.5.3"
+	},
+	"engines": {
+		"node": ">=12.0.0",
+		"yarn": "^1.5"
+	},
+	"quokka": {
+		"babel": {
+			"env": "test",
+			"polyfill": false
+		},
+		"installPackageCommand": "yarn add {packageName}",
+		"env": {
+			"params": {
+				"env": "NODE_ENV=test"
+			}
+		}
+	},
+	"lint-staged": {
+		"*.{ts,tsx,js,jsx}": [
+			"yarn lint"
+		],
+		"**/*.{ts,tsx,json,js,css}": [
+			"prettier --write"
+		],
+		"*.css": "stylelint --fix",
+		"*.--write": "prettier --write"
+	},
+	"volta": {
+		"node": "16.0.0",
+		"yarn": "1.22.10"
+	}
+}
